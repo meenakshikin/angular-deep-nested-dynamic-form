@@ -1,0 +1,15 @@
+<div fxLayout="column" fxLayoutAlign="center stretch">
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{field.label}}
+    </mat-card-title>
+  </mat-card-header>
+<div class="wrapper" *ngFor="let arrGroup of group.get(field.name)['controls'];let i = index;">
+    <div *ngFor="let field of field.formArrays[i];let idx=index;">
+      <div [className]="(idx==0)?'box1':'box2'" dynamicField [field]="field" [group]="arrGroup">
+      </div>
+		</div>
+	</div>
+  </mat-card>
+</div>
